@@ -12,13 +12,14 @@ app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({extended : false}))
 app.use(methodOverride('_method'))
 
-mongoose.connect('mongodb+srv://Shivam:shivam@1811@cluster0-2aufw.mongodb.net/test?retryWrites=true&w=majority', (err)=>{
-    if(err){
-        console.log('err')
-    }else{
-        console.log('DB connected')
-    }
-})
+mongoose.connect('mongodb+srv://Shivam:shivam%401811@cluster0-2aufw.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true})
+    .then((data)=>{
+        console.log('DB Connected')
+    })
+    .catch((err)=>{
+        console.log(err)
+    })
+    
 
 app.use("/", indexRoute)
 

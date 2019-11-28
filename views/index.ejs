@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crud</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
+    <link rel = "stylesheet" href = "/css/app.css">
+</head>
+<body>
+    <div>
+            <nav class="navbar navbar-dark bg-dark">
+                    <a class="navbar-brand" href="#">CRUD APP</a>
+                  </nav>
+    </div>
+    <div class="container">
+        <div class = "row">
+            <div class ="col-sm-6">
+                    <div class="form-group">
+    <h1>FORM</h1>
+    <form class= "form shadow" method = 'POST' action = '/'>
+    <input type = "text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name = "name" placeholder="Enter Name">
+    <input type = "email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name = "email" placeholder = "Enter Email">
+    <input type = "tel" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name = "phone" placeholder="Enter Contact">    
+    <button type = 'submit' class="btn btn-primary">Submit</button>
+    </form>
+                    </div>
+</div>
+    <div class = "col-sm-6">
+        <h1>Users List</h1>
+        <table class="table shadow">
+            <thead class = "table-dark">
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Update</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                    <%data.forEach((indUser)=>{%>
+                        <tr scope="row">
+                            <td><%=indUser.name%></td>
+                            <td><%=indUser.email%></td>
+                            <td><%=indUser.phone%></td>
+                            <td><a class="btn btn-primary" href = "/update/<%=indUser._id%>" >Update</a></td>
+                            <td>
+                                <form method = "POST" action = "/delete/<%=indUser._id%>?_method=DELETE">
+                                <button type = "submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                        <%})%>
+            </tbody>
+        </table>
+    </div>
+    </div>
+</div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js" integrity="sha384-3qaqj0lc6sV/qpzrc1N5DC6i1VRn/HyX4qdPaiEFbn54VjQBEU341pvjz7Dv3n6P" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+.form{
+    /* box-shadow: 1px 2px 2px 2px #888888; */
+    padding: 40px;
+}
+.form input[type = "text"], form input[type = "email"], form input[type = "tel"]{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    width: 70%;
+    height: 50px;
+    text-align: center;
+    padding: 14px, 10px;
+    background-color: #f2f2f2;
+}
+
+.form button{
+ position: relative;
+ margin-left: 40%;
+ background-color: green;
+}

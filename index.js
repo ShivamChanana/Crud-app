@@ -12,7 +12,7 @@ app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({extended : false}))
 app.use(methodOverride('_method'))
 
-mongoose.connect('mongodb+srv://Shivam:shivam%401811@cluster0-2aufw.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true})
+mongoose.connect('mongodb+srv://shivam:123456ABC@cluster0-2aufw.mongodb.net/test?retryWrites=true&w=majority',{useNewUrlParser: true})
     .then(()=>{
         console.log('DB Connected')
     })

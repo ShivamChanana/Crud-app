@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({extended : false}))
 app.use(methodOverride('_method'))
 
 mongoose.connect('mongodb+srv://Shivam:shivam%401811@cluster0-2aufw.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true})
-    .then((data)=>{
+    .then(()=>{
         console.log('DB Connected')
     })
     .catch((err)=>{
